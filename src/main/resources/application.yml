@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: app_user
+ 
+server:
+  port: 8800
+
