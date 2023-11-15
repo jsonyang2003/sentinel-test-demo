@@ -4,49 +4,60 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.json.test</groupId>
-	<artifactId>sentinel-test-demo</artifactId>
+	<artifactId>sentinel-json-demo</artifactId>
 	<version>1.1.0</version>
-	<name>sentinel-demo-test</name>
-
+	<name>sentinel-json-demo</name>
 
 	<properties>
+	  <!-- must need 控制台和应用通信用fastjson序列化 需要和控制台保持大版本一致 -->
 		<fastjson.version>1.2.83_noneautotype</fastjson.version>
-		<spring.boot.version>2.5.12</spring.boot.version>
+		<!-- infloww 目前用的是 2.4.13 可用内部parent版本即可  当前版本的sentinel 经测试支持 2.5.x版本 其他版本未测试-->
+		<spring.boot.version>2.4.13</spring.boot.version>
 	</properties>
 
 	<dependencies>
-		<dependency>
+	    <!-- must need -->
+	 	<dependency>
 			<groupId>com.alibaba.csp</groupId>
 			<artifactId>sentinel-core</artifactId>
 			<version>2.0.0-alpha</version>
 		</dependency>
+		<!-- must need -->
 		<dependency>
 			<groupId>com.alibaba.csp</groupId>
 			<artifactId>sentinel-annotation-aspectj</artifactId>
 			<version>2.0.0-alpha</version>
 		</dependency>
+		<!-- must need -->
 		<dependency>
 			<groupId>com.alibaba.csp</groupId>
 			<artifactId>sentinel-parameter-flow-control</artifactId>
 			<version>2.0.0-alpha</version>
 		</dependency>
-
+		
+		<!-- Optional  需要和控制台通信 接收控制台下发的规则时需要 -->
+		<dependency>
+			<groupId>com.alibaba.csp</groupId>
+			<artifactId>sentinel-transport-simple-http</artifactId>
+			<version>2.0.0-alpha</version>
+		</dependency>
+		
+		
+        <!-- Optional 需要自动拦截 spring mvc -->
 		<dependency>
 			<groupId>com.alibaba.csp</groupId>
 			<artifactId>sentinel-spring-webmvc-adapter</artifactId>
 			<version>1.8.6</version>
 		</dependency>
+		
+		 <!-- Optional 裸容器 无spring环境下使用 -->
 		<dependency>
 			<groupId>com.alibaba.csp</groupId>
 			<artifactId>sentinel-web-servlet</artifactId>
 			<version>1.8.6</version>
 		</dependency>
 
-		<dependency>
-			<groupId>com.alibaba.csp</groupId>
-			<artifactId>sentinel-transport-simple-http</artifactId>
-			<version>2.0.0-alpha</version>
-		</dependency>
+		
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -68,7 +79,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>root2</finalName>
+		<finalName>root</finalName>
 		<plugins>
 			<!-- spring-boot-maven-plugin -->
 			<plugin>
