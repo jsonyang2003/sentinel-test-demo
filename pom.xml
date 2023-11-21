@@ -3,63 +3,39 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.json.test</groupId>
-	<artifactId>sentinel-json-demo</artifactId>
+	<groupId>com.json.sentinel</groupId>
+	<artifactId>json-sentinel</artifactId>
 	<version>1.1.0</version>
 	<name>sentinel-json-demo</name>
 
 	<properties>
-	  <!-- must need 控制台和应用通信用fastjson序列化 需要和控制台保持大版本一致 -->
+		<!-- must need 控制台和应用通信用fastjson序列化 需要和控制台保持大版本一致 -->
 		<fastjson.version>1.2.83_noneautotype</fastjson.version>
-		<!-- infloww 目前用的是 2.4.13 可用内部parent版本即可  当前版本的sentinel 经测试支持 2.5.x版本 其他版本未测试-->
+		<!-- infloww 目前用的是 2.4.13 可用内部parent版本即可 当前版本的sentinel 经测试支持 2.5.x版本 其他版本未测试 -->
 		<spring.boot.version>2.4.13</spring.boot.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
 
 	<dependencies>
-	    <!-- must need -->
-	 	<dependency>
-			<groupId>com.alibaba.csp</groupId>
-			<artifactId>sentinel-core</artifactId>
-			<version>2.0.0-alpha</version>
-		</dependency>
-		<!-- must need -->
-		<dependency>
-			<groupId>com.alibaba.csp</groupId>
-			<artifactId>sentinel-annotation-aspectj</artifactId>
-			<version>2.0.0-alpha</version>
-		</dependency>
-		<!-- must need -->
-		<dependency>
-			<groupId>com.alibaba.csp</groupId>
-			<artifactId>sentinel-parameter-flow-control</artifactId>
-			<version>2.0.0-alpha</version>
+
+
+       <dependency>
+			<groupId>com.infloww</groupId>
+			<artifactId>infloww-health</artifactId>
+			<version>1.0-SNAPSHOT</version>
 		</dependency>
 		
-		<!-- Optional  需要和控制台通信 接收控制台下发的规则时需要 -->
 		<dependency>
-			<groupId>com.alibaba.csp</groupId>
-			<artifactId>sentinel-transport-simple-http</artifactId>
-			<version>2.0.0-alpha</version>
-		</dependency>
-		
-		
-        <!-- Optional 需要自动拦截 spring mvc -->
-		<dependency>
-			<groupId>com.alibaba.csp</groupId>
-			<artifactId>sentinel-spring-webmvc-adapter</artifactId>
-			<version>1.8.6</version>
-		</dependency>
-		
-		 <!-- Optional 裸容器 无spring环境下使用 -->
-		<dependency>
-			<groupId>com.alibaba.csp</groupId>
-			<artifactId>sentinel-web-servlet</artifactId>
-			<version>1.8.6</version>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.16.22</version>
 		</dependency>
 
-		
-
-		<dependency>
+	    <dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-aop</artifactId>
 			<version>${spring.boot.version}</version>
@@ -69,11 +45,7 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 			<version>${spring.boot.version}</version>
 		</dependency>
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<version>1.16.22</version>
-		</dependency>
+
 
 
 	</dependencies>

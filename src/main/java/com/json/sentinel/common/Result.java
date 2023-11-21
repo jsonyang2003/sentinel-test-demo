@@ -1,10 +1,10 @@
-package com.sentinel.demo.common;
+package com.json.sentinel.common;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.sentinel.demo.exception.BaseException;
-import com.sentinel.demo.exception.ErrorType;
-import com.sentinel.demo.exception.SystemErrorType;
+import com.json.sentinel.exception.BaseException;
+import com.json.sentinel.exception.ErrorType;
+import com.json.sentinel.exception.SystemErrorType;
 
 import lombok.Data;
 import java.time.Instant;

@@ -1,4 +1,4 @@
-package com.sentinel.demo.controller;
+package com.json.sentinel.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.alibaba.fastjson.JSON;
-import com.sentinel.demo.common.Result;
-import com.sentinel.demo.dto.Product;
-import com.sentinel.demo.service.ProductService;
-import com.sentinel.demo.service.ProductServiceV2;
+import com.json.sentinel.common.Result;
+import com.json.sentinel.dto.Product;
+import com.json.sentinel.service.ProductService;
+import com.json.sentinel.service.ProductServiceV2;
 
 import lombok.extern.slf4j.Slf4j;
 

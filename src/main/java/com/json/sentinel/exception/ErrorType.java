@@ -1,4 +1,4 @@
-package com.sentinel.demo.exception;
+package com.json.sentinel.exception;
 
 public interface ErrorType {
     /**

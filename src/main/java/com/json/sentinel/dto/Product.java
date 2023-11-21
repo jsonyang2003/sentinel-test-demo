@@ -1,4 +1,4 @@
-package com.sentinel.demo.dto;
+package com.json.sentinel.dto;
 
 import java.io.Serializable;
 

@@ -1,5 +1,5 @@
 
-package com.sentinel.demo.common;
+package com.json.sentinel.common;
 
 import com.alibaba.csp.sentinel.slots.block.BlockException;
 
