@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan({"com.json.sentinel","com.infloww.health"})
+@ComponentScan({"com.json.sentinel"})
 public class StartApplication {
 
     public static void main(String[] args) {

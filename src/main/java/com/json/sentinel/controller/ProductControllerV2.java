@@ -1,5 +1,7 @@
 package com.json.sentinel.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,6 +16,7 @@ import com.json.sentinel.common.Result;
 import com.json.sentinel.dto.Product;
 import com.json.sentinel.service.ProductService;
 import com.json.sentinel.service.ProductServiceV2;
+ 
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -25,6 +28,7 @@ public class ProductControllerV2 {
 	@Autowired
 	private ProductServiceV2 productServiceV2;
 
+	
 	/**
 	 * get("http://localhost:9000/product/add?id=1009&name=iphonese&desc=redandblack")
 	 * 

@@ -12,12 +12,13 @@
 		<!-- must need 控制台和应用通信用fastjson序列化 需要和控制台保持大版本一致 -->
 		<fastjson.version>1.2.83_noneautotype</fastjson.version>
 		<!-- infloww 目前用的是 2.4.13 可用内部parent版本即可 当前版本的sentinel 经测试支持 2.5.x版本 其他版本未测试 -->
-		<spring.boot.version>2.4.13</spring.boot.version>
+		<spring-boot.version>2.4.13</spring-boot.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<maven.compiler.encoding>UTF-8</maven.compiler.encoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
+		<apollo.version>2.0.1</apollo.version>
 	</properties>
 
 	<dependencies>
@@ -38,15 +39,52 @@
 	    <dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-aop</artifactId>
-			<version>${spring.boot.version}</version>
+			<version>${spring-boot.version}</version>
+		<exclusions>
+	        <exclusion>
+	          <artifactId>spring-boot-starter-logging</artifactId>
+	          <groupId>org.springframework.boot</groupId>
+	        </exclusion>
+	      </exclusions>
+		</dependency>
+
+		
+		<dependency>
+	      <groupId>org.springframework.boot</groupId>
+	      <artifactId>spring-boot-starter-web</artifactId>
+	      <version>${spring-boot.version}</version>
+	      <exclusions>
+	        <exclusion>
+	          <artifactId>spring-boot-starter-logging</artifactId>
+	          <groupId>org.springframework.boot</groupId>
+	        </exclusion>
+	      </exclusions>
+	    </dependency>
+	    
+     <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-log4j2</artifactId>
+        <version>${spring-boot.version}</version>
+    </dependency>
+    
+      <!-- apollo客户端
+		<dependency>
+			<groupId>com.ctrip.framework.apollo</groupId>
+			<artifactId>apollo-client</artifactId>
+			<version>${apollo.version}</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>guava</artifactId>
+					<groupId>com.google.guava</groupId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-			<version>${spring.boot.version}</version>
+			<groupId>com.ctrip.framework.apollo</groupId>
+			<artifactId>apollo-openapi</artifactId>
+			<version>${apollo.version}</version>
 		</dependency>
-
-
+       -->
 
 	</dependencies>
 
@@ -57,7 +95,7 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<version>${spring.boot.version}</version>
+				<version>${spring-boot.version}</version>
 				<executions>
 					<execution>
 						<goals>
